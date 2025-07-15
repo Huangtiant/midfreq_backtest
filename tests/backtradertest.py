@@ -64,13 +64,13 @@ if __name__ == '__main__':
 
     cerebro.addstrategy(MyStrategy)
     # # 读取数据
-    # df = pd.read_feather('test_data/ES_5min.csv')
+    # df = pd.read_feather('data/ES_5min.csv')
     #
     # df.candle_begin_time = pd.to_datetime(df.candle_begin_time)
     #
     # df.set_index('candle_begin_time', inplace=True)
 
-    df = pd.read_csv('./test_data/FX_EURUSD_5min.csv', parse_dates=True, index_col='time')
+    df = pd.read_csv('data/raw/FX_EURUSD_5min.csv', parse_dates=True, index_col='time')
     df['volume'] = 1  # 或者用 1，避免除以0
 
     # 给cerebro添加数据

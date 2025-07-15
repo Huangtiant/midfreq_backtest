@@ -1,16 +1,25 @@
 # utils/bom.py
 
-def recognize_BOM(dataframe):
+import pandas as pd
+
+def recognize_BOM(df: pd.DataFrame, lookback: int = 5) -> bool:
     """
-    检查是否存在BOM形态。
-    参数: dataframe：pandas.DataFrame格式的历史K线数据
-    返回: True or False
+    识别是否存在 BOM 形态。
+
+    参数:
+        df (pd.DataFrame): 历史K线数据
+        lookback (int): 回看周期
+
+    返回:
+        bool: 是否识别出 BOM
     """
-    # 开盘10-12根k是否组成BOM
-    # 1.范围在30%-50%平均范围
-    # 2.是否在第一根k线后交替创造新高新低（主要高低点）
-    last = dataframe.iloc[-3:]
-    # 假设形态条件是：中间K线最低
-    if last['low'].iloc[1] < last['low'].iloc[0] and last['low'].iloc[1] < last['low'].iloc[2]:
-        return True
+    # TODO: 填写BOM识别逻辑
+    return False
+
+
+def recognize_double_bottom(df: pd.DataFrame) -> bool:
+    """
+    识别双底形态（占位函数）
+    """
+    # TODO: 填写双底识别逻辑
     return False
