@@ -17,6 +17,10 @@ def run():
     # 读取 CSV 数据
     df = pd.read_csv('data/raw/ES_5min.csv', parse_dates=True, index_col='time')
 
+    # 如果缺少 volume 列，则补上默认值
+    if 'volume' not in df.columns:
+        df['volume'] = 0
+
     # 转换为 backtrader 数据格式
     data = bt.feeds.PandasData(dataname=df)
 
