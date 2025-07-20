@@ -1,4 +1,4 @@
-# strategies/BOM_identificaiton/bom_strategy.py
+# strategies/BOM_identification/bom_strategy.py
 
 import backtrader as bt
 import pandas as pd
