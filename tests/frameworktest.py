@@ -35,7 +35,7 @@ def run_for_day(day_df, day_str):
 
 def run_daily_backtests():
     # 读取大 CSV 文件
-    df = pd.read_csv('data/raw/ES_5min.csv', parse_dates=True, index_col='time')
+    df = pd.read_csv('data/raw/ES_5min_May.csv', parse_dates=True, index_col='time')
 
     # 按照日期分组
     grouped = df.groupby(df.index.date)
